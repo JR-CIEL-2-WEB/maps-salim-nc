@@ -24,19 +24,44 @@
     defer></script>
   <script>
     function initMap() {
-      const myLatLng = { lat: -25.363, lng: 131.044 };
+      const rostand = { lat: 48.958283, lng: 2.546761 };
+      const marq1stade=  {lat: 48.96259, lng: 2.548120 };
+      const marq2stade=  {lat:  48.95930033308523, lng: 2.5477890651742516};
+      const marq3stade=  {lat: 48.95901659236071, lng: 2.544364368005043 };
       const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: myLatLng,
+        zoom: 15,
+        center: rostand,
       });
 
       new google.maps.Marker({
-        position: myLatLng,
+        position: rostand,
         map,
-        title: "Hello World!",
+        title: "Lycée jean-rostand",
       });
-    }
 
+      new google.maps.Marker({
+        position: marq1stade,
+        map,
+        title: "marq1 stade",
+      });
+    
+
+
+       new google.maps.Marker({
+        position: marq2stade,
+        map,
+        title: "marq2 stade",
+      });
+    
+       new google.maps.Marker({
+        position: marq3stade,
+        map,
+        title: "marq3 stade",
+      });
+    
+    }
+    
+   
     window.initMap = initMap;
   </script>
 </body>
