@@ -1,83 +1,99 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <title>JRostand stade reperes</title>
+    <title>Mes lieux préférés</title>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        img.info-image {
+            width: 200px;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>JRostand Reperes Stade</h1>
-<hr>
-<div id="map">...</div>
+    <h1>Mes deux lieux préférés</h1>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Y32T_PJHZxYcK3BJYJFNwSl6cuvLXpo&callback=initMap&v=weekly" defer></script>
+
+    <script>
+        const markers = [
+            {
+                id: 1,
+                name: "Orange Velodrome",
+                description: "L’Orange Vélodrome est le stade principal de la ville de Marseille, en France. C’est un lieu emblématique du sport français.C’est là que joue le club de football OM, l’un des clubs les plus populaires en France.Il peut accueillir plus de 67 000 spectateurs, ce qui en fait le 2ᵉ plus grand stade de France.",
+                lat: 43.269605,
+                lng:  5.394641,
+                image: "https://marseille.city-life.fr/images/fiche/360/2559.jpg"
+            },
+      {
+     
+        id: 2,
+        name: "Musée du Louvre",
+        description: "Le plus grand musée d'art au monde. La Joconde y est exposée.",
+        lat: 48.860611,
+        lng: 2.337644,
+        image: "https://d397xw3titc834.cloudfront.net/images/original/f/64/f64e49bb18e7d50f0121f76bb07af553.jpg"
+    }
 
 
-<script   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Y32T_PJHZxYcK3BJYJFNwSl6cuvLXpo&callback=initMap"></script>
-<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
+        ];
 
-    // au chargement de la page
-    //window.onload = loadDoc();
-    // when page is ready, initialize the map!
-    google.maps.event.addDomListener(window, 'load', loadDoc());
-    var markers;
+        function initMap() {
+            const mapOptions = {
+                center: new google.maps.LatLng(48.859, 2.32),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
 
-    // Ajax avec JQuery
-    function loadDoc() {
-        $.ajax({
-                url: "markersJrostand.json",
-                method: "GET",
-                //data: { id : menuId },
-                dataType: "json",
-                success: function(dataMarkers){
-                            markers = dataMarkers;
-                            for(let i = 0; i < markers.length;i++){
-                                let marker = markers[i];
-                                for(key in markers[i]){
-                                    console.log(key + ":" + marker[key]);
-                                }
-                                console.log("____________");
-                            }
-                            initMap();
-                        }
+            const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            // Création des marqueurs
+            for (let i = 0; i < markers.length; i++) {
+                const data = markers[i];
+                const position = new google.maps.LatLng(data.lat, data.lng);
+
+                const marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: data.name
+                });
+
+                const infowindow = new google.maps.InfoWindow({
+                    content: `
+                        <div>
+                            <h3>${data.name}</h3>
+                            <p>${data.description}</p>
+                            <img src="${data.image}" alt="${data.name}" class="info-image" />
+                        </div>
+                    `
+                });
+
+                marker.addListener("click", function () {
+                    infowindow.open(map, marker);
+                });
             }
-        );
-    }
-
-   function initMap(){
-       var options = {
-           center: new google.maps.LatLng(48.95930033308523, 2.5477890651742516),
-           zoom: 15,
-           mapTypeId: google.maps.MapTypeId.ROADMAP
-       };
-
-
-        /*****   Markers  *****/
-
-       var map = new google.maps.Map(document.getElementById("map"), options);
-
-       // On positionne les marqueurs sur la carte
-       for (let i = 0; i < markers.length; i++) {
-           let latlng = markers[i];
-           new google.maps.Marker({
-               position: latlng,
-               map : map
-           });
-       }
-
-       /**** Polylines *****/
-       const flightPath = new google.maps.Polyline({
-           path: markers,
-           geodesic: true,
-           strokeColor: "#FF0000",
-           strokeOpacity: 1.0,
-           strokeWeight: 2,
-       });
-       flightPath.setMap(map);
-    }
-
-
-</script>
-
+        }
+    </script>
 
 </body>
+
 </html>
