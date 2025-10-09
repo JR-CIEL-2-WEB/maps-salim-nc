@@ -1,0 +1,95 @@
+<html>
+
+</html>
+
+<head>
+  <title>Simple Markers</title>
+
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script type="module" src="./index.js"></script>
+</head>
+
+<body>
+  <div id="map"></div>
+
+  <!-- 
+      The `defer` attribute causes the script to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises. See
+      https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Y32T_PJHZxYcK3BJYJFNwSl6cuvLXpo&callback=initMap&v=weekly"
+    defer></script>
+  <script>
+    function initMap() {
+      const rostand = { lat: 48.958283, lng: 2.546761 };
+      const marq1stade=  {lat: 48.96259, lng: 2.548120 };
+      const marq2stade=  {lat:  48.95930033308523, lng: 2.5477890651742516};
+      const marq3stade=  {lat: 48.95901659236071, lng: 2.544364368005043 };
+      const marq4stade=  {lat: 48.96083250510581, lng: 2.5428194730675138 };
+      const marq5stade=  {lat: 48.96334006261106, lng: 2.5503223316267305 };
+      const marq6stade=  {lat: 48.96146800531762, lng:  2.553135524155863 };
+
+
+     
+    
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: rostand,
+      });
+
+      new google.maps.Marker({
+        position: rostand,
+        map,
+        title: "Lycée jean-rostand",
+      });
+
+      new google.maps.Marker({
+        position: marq1stade,
+        map,
+        title: "marq1 stade",
+      });
+    
+
+
+       new google.maps.Marker({
+        position: marq2stade,
+        map,
+        title: "marq2 stade",
+      });
+    
+       new google.maps.Marker({
+        position: marq3stade,
+        map,
+        title: "marq3 stade",
+      });
+    
+       new google.maps.Marker({
+        position: marq4stade,
+        map,
+        title: "marq4 stade",
+      });
+
+        new google.maps.Marker({
+        position: marq5stade,
+        map,
+        title: "marq5 stade",
+      });
+
+      new google.maps.Marker({
+        position: marq6stade,
+        map,
+        title: "marq6 stade",
+      });
+
+      
+    }
+    
+   
+    window.initMap = initMap;
+  </script>
+</body>
+
+</html>
