@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>Grandes Courses Internationales</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
     }
+
     h1 {
       text-align: center;
     }
+
     select {
       font-size: 16px;
       padding: 5px;
@@ -22,6 +23,7 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     #map {
       height: 600px;
       width: 100%;
@@ -30,6 +32,7 @@
       border: 1px solid #ccc;
       border-radius: 6px;
     }
+
     .popup-image {
       width: 200px;
       height: auto;
@@ -46,73 +49,100 @@
 </select>
 <div id="map"></div>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-  const map = L.map('map').setView([20, 0], 2); // Vue mondiale
+  let map;
+  let polyline = null;
+  let markers = [];
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
+  // Rendre la fonction disponible globalement
+  window.initMap = function () {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 20, lng: 0 },
+      zoom: 2,
+    });
 
-  let currentPolyline = null;
-  let currentMarkers = [];
+    fetch("courses.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const select = document.getElementById("courseSelect");
 
-  // Icône rouge style Google Maps
-  const redIcon = L.icon({
-    iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-    iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -32]
-  });
-
-  fetch('courses.json')
-    .then(res => res.json())
-    .then(data => {
-      const select = document.getElementById('courseSelect');
-
-      data.courses.forEach((course, idx) => {
-        const option = document.createElement('option');
-        option.value = idx;
-        option.textContent = course.name;
-        select.appendChild(option);
-      });
-
-      select.addEventListener('change', () => {
-        const idx = select.value;
-        if (idx === "") return;
-
-        const course = data.courses[idx];
-
-        // Supprimer anciennes polylines et marqueurs
-        if (currentPolyline) map.removeLayer(currentPolyline);
-        currentMarkers.forEach(m => map.removeLayer(m));
-        currentMarkers = [];
-
-        // Créer polyline rouge
-        const latlngs = course.points.map(p => [p.lat, p.lng]);
-        currentPolyline = L.polyline(latlngs, { color: 'red', weight: 4 }).addTo(map);
-
-        // Ajouter marqueurs rouges avec popup (icône Google Maps)
-        course.points.forEach(p => {
-          const marker = L.marker([p.lat, p.lng], { icon: redIcon }).addTo(map);
-
-          const popupContent = `
-            <strong>${p.name}</strong><br/>
-            <p style="max-width:200px">${p.description}</p>
-            <img src="${p.image}" alt="${p.name}" class="popup-image" />
-          `;
-
-          marker.bindPopup(popupContent);
-          currentMarkers.push(marker);
+        data.courses.forEach((course, idx) => {
+          const option = document.createElement("option");
+          option.value = idx;
+          option.textContent = course.name;
+          select.appendChild(option);
         });
 
-        map.fitBounds(currentPolyline.getBounds(), { padding: [50, 50] });
+        select.addEventListener("change", () => {
+          const idx = select.value;
+          if (idx === "") return;
+
+          const course = data.courses[idx];
+
+          // Nettoyage précédent
+          if (polyline) polyline.setMap(null);
+          markers.forEach((m) => m.setMap(null));
+          markers = [];
+
+          // Création du tracé rouge
+          const path = course.points.map((p) => ({ lat: p.lat, lng: p.lng }));
+
+          polyline = new google.maps.Polyline({
+            path: path,
+            geodesic: true,
+            strokeColor: "#FF0000",
+            strokeOpacity: 1.0,
+            strokeWeight: 3,
+          });
+
+          polyline.setMap(map);
+
+          const bounds = new google.maps.LatLngBounds();
+
+          // Création des marqueurs
+          course.points.forEach((p) => {
+            const marker = new google.maps.Marker({
+              position: { lat: p.lat, lng: p.lng },
+              map,
+              title: p.name,
+              icon: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+            });
+
+            const content = `
+              <div style="max-width:220px">
+                <strong>${p.name}</strong><br/>
+                <p>${p.description}</p>
+                <img src="${p.image}" alt="${p.name}" class="popup-image" />
+              </div>
+            `;
+
+            const infowindow = new google.maps.InfoWindow({
+              content,
+            });
+
+            marker.addListener("click", () => {
+              infowindow.open(map, marker);
+            });
+
+            markers.push(marker);
+            bounds.extend(marker.getPosition());
+          });
+
+          map.fitBounds(bounds);
+        });
+      })
+      .catch((err) => {
+        console.error("Erreur chargement JSON :", err);
       });
-    })
-    .catch(err => {
-      console.error("Erreur chargement JSON :", err);
-    });
+  };
 </script>
+
+<!-- Remplacez YOUR_API_KEY par votre vraie clé Google Maps -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Y32T_PJHZxYcK3BJYJFNwSl6cuvLXpo&callback=initMap&v=weekly"
+  async
+  defer
+></script>
 
 </body>
 </html>

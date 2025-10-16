@@ -9,7 +9,7 @@
           "description": "Lieu de départ emblématique, avenue célèbre à Paris.",
           "lat": 48.8698,
           "lng": 2.3076,
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Champs-Élysées_2019.jpg/320px-Champs-Élysées_2019.jpg"
+          "image": "https://parisjetaime.com/data/layout_image/5249_Defile-du-14-juillet-vue-arc-de-triomphe-630x405-C-DR.jpg"
         },
         {
           "id": 2,
@@ -17,7 +17,7 @@
           "description": "Traversée de la place historique et très large.",
           "lat": 48.8656,
           "lng": 2.3212,
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Place_de_la_Concorde_Paris_2013.jpg/320px-Place_de_la_Concorde_Paris_2013.jpg"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW-liaH04-gKeieCeO6sQBJ_CsMS988KV1JQ&s"
         },
         {
           "id": 3,
@@ -33,7 +33,7 @@
           "description": "Belle promenade à travers ce jardin classique.",
           "lat": 48.8635,
           "lng": 2.3270,
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Tuileries_Garden_-_Paris.jpg/320px-Tuileries_Garden_-_Paris.jpg"
+          "image": "https://lelephant-larevue.fr/wp-content/uploads/2022/04/0-ouverture-jardin-des-tuileries-@-marcelloland-adobestock_428813566-scaled.jpeg"
         },
         {
           "id": 5,
@@ -41,7 +41,7 @@
           "description": "Arrivée à ce grand stade situé au nord de Paris.",
           "lat": 48.9244,
           "lng": 2.3600,
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Stade_de_France_2011.jpg/320px-Stade_de_France_2011.jpg"
+          "image": "https://www.bouygues-construction.com/blog/wp-content/uploads/001480206239an001h1274956790398183271.png-1_-1xoxar.png"
         }
       ]
     },
@@ -54,7 +54,7 @@
           "description": "Pont de départ mythique dans Staten Island.",
           "lat": 40.6066,
           "lng": -74.0447,
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Verrazzano-Narrows_Bridge_2010-04-19_11-11-37.JPG/320px-Verrazzano-Narrows_Bridge_2010-04-19_11-11-37.JPG"
+          "image": "https://stvinc.com/wp-content/uploads/2024/10/verrazano-bridge-toll-improvements-project.jpg"
         },
         {
           "id": 2,
@@ -62,7 +62,7 @@
           "description": "Traversée du célèbre quartier de Brooklyn.",
           "lat": 40.6782,
           "lng": -73.9442,
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Brooklyn_Bridge_park.jpg/320px-Brooklyn_Bridge_park.jpg"
+          "image": "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/newyorkstate/DUMBO_manhattan_bridge_at_night_GettyImages_640x474_79eb1662-5f67-4b45-8761-66700026bf0f.jpg"
         },
         {
           "id": 3,
@@ -70,7 +70,7 @@
           "description": "Passage dans l’arrondissement de Queens.",
           "lat": 40.7282,
           "lng": -73.7949,
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Queensboro_Bridge_-_Queens.jpg/320px-Queensboro_Bridge_-_Queens.jpg"
+          "image": "https://media.routard.com/image/51/0/long-island-city.1614510.w430.jpg"
         },
         {
           "id": 4,
