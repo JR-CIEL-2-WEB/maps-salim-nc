@@ -1,0 +1,190 @@
+/* ====== Reset et base ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* ====== Header ====== */
+  .main-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+  }
+  
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #42a5f5;
+    left: 0;
+    bottom: -4px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #42a5f5;
+  }
+  
+  .navbar a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  /* ====== Section connexion ====== */
+  .login-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+  }
+  
+  .login-container {
+    width: 380px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .login-container h2 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+  
+  /* ====== Champs ====== */
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: background 0.3s ease;
+  }
+  
+  .input-field::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .input-field:focus {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* ====== Bouton ====== */
+  .btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #42a5f5, #1e88e5);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(66, 165, 245, 0.5);
+  }
+  
+  /* ====== Liens ====== */
+  .forgot-password,
+  .signup-link {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .forgot-password a,
+  .signup-link a {
+    color: #42a5f5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .forgot-password a:hover,
+  .signup-link a:hover {
+    color: #82cfff;
+    text-decoration: underline;
+  }
+  
+  /* ====== Animation ====== */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ====== Responsive ====== */
+  @media (max-width: 480px) {
+    .login-container {
+      width: 90%;
+      padding: 30px 20px;
+    }
+  
+    .navbar ul {
+      gap: 15px;
+    }
+  
+    .logo img {
+      width: 120px;
+    }
+  }
+  

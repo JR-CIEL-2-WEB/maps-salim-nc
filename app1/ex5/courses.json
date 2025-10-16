@@ -1,0 +1,44 @@
+{
+  "courses": [
+    {
+      "name": "Course 1 - Parc Central",
+      "points": [
+        { "lat": 48.8566, "lng": 2.3522 },
+        { "lat": 48.8570, "lng": 2.3530 },
+        { "lat": 48.8575, "lng": 2.3545 }
+      ]
+    },
+    {
+      "name": "Course 2 - Bord de Seine",
+      "points": [
+        { "lat": 48.8580, "lng": 2.2950 },
+        { "lat": 48.8585, "lng": 2.2965 },
+        { "lat": 48.8590, "lng": 2.2980 }
+      ]
+    },
+    {
+      "name": "Course 3 - Bois de Boulogne",
+      "points": [
+        { "lat": 48.8640, "lng": 2.2590 },
+        { "lat": 48.8650, "lng": 2.2610 },
+        { "lat": 48.8660, "lng": 2.2630 }
+      ]
+    },
+    {
+      "name": "Course 4 - Canal Saint-Martin",
+      "points": [
+        { "lat": 48.8730, "lng": 2.3650 },
+        { "lat": 48.8740, "lng": 2.3660 },
+        { "lat": 48.8750, "lng": 2.3675 }
+      ]
+    },
+    {
+      "name": "Course 5 - Parc de la Villette",
+      "points": [
+        { "lat": 48.8900, "lng": 2.3930 },
+        { "lat": 48.8910, "lng": 2.3945 },
+        { "lat": 48.8920, "lng": 2.3960 }
+      ]
+    }
+  ]
+}

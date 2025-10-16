@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black; 
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header/Navbar */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  align-items: center;
+  text-transform: uppercase;
+  height: 100px;
+  padding: 0 30px;
+}
+
+.logo {
+  width: 250px;
+  position: absolute;
+  top: 20px; 
+  left: 20px; 
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.desktop-main-menu {
+  margin-left: 63%;
+  margin-top: 40px;
+}
+
+.desktop-main-menu ul {
+  display: flex;
+  justify-content: center;
+  font-family: 'Palatino';
+}
+
+.desktop-main-menu ul li {
+  position: relative;
+  margin-right: 20px;
+  padding-bottom: 2px;
+  color: #fff;
+  font-size: 100%;
+}
+
+.desktop-main-menu ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: right center;
+}
+
+.desktop-main-menu ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition-duration: 0.4s;
+}
+
+/* Section A */
+.section-a {
+  background-image: url('../img/50416-2560x1600-desktop-hd-running-wallpaper-photo.jpg');
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-transform: capitalize;
+}
+
+/* Centré au milieu */
+.running-mission {
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/running-bg.jpg') center/cover no-repeat;
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.running-mission h4 {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.running-mission h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.running-mission p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.running-mission .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.running-mission .btn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Bouton animation */
+.btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  min-width: 130px;
+  padding: 15px 50px;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.btn:hover span {
+  color: #000;
+}
+
+.btn .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #000;
+  z-index: -1;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn:hover .hover {
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  position: relative;
+  padding: 55px 0;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer ul li {
+  margin-right: 30px;
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 2.5;
+}
+
+footer ul li a {
+  color: #fff;
+  transition: color 0.6s;
+}
+
+footer ul li a:hover {
+  color: #aaa;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(140px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .desktop-main-menu {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  footer ul li:first-child {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  footer ul li {
+    margin-right: 15px;
+  }
+
+  .logo {
+    width: 150px;
+    margin: auto;
+  }
+
+  .running-mission {
+    margin: 0 20px;
+  }
+}

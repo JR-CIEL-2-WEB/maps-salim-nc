@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grandes Courses Internationales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    select {
+      font-size: 16px;
+      padding: 5px;
+      margin-bottom: 10px;
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #map {
+      height: 600px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .popup-image {
+      width: 200px;
+      height: auto;
+      margin-top: 5px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Grandes Courses Internationales</h1>
+<select id="courseSelect">
+  <option value="">-- Sélectionnez une course --</option>
+</select>
+<div id="map"></div>
+
+<script>
+  let map;
+  let polyline = null;
+  let markers = [];
+
+  // Rendre la fonction disponible globalement
+  window.initMap = function () {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 20, lng: 0 },
+      zoom: 2,
+    });
+
+    fetch("courses.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const select = document.getElementById("courseSelect");
+
+        data.courses.forEach((course, idx) => {
+          const option = document.createElement("option");
+          option.value = idx;
+          option.textContent = course.name;
+          select.appendChild(option);
+        });
+
+        select.addEventListener("change", () => {
+          const idx = select.value;
+          if (idx === "") return;
+
+          const course = data.courses[idx];
+
+          // Nettoyage précédent
+          if (polyline) polyline.setMap(null);
+          markers.forEach((m) => m.setMap(null));
+          markers = [];
+
+          // Création du tracé rouge
+          const path = course.points.map((p) => ({ lat: p.lat, lng: p.lng }));
+
+          polyline = new google.maps.Polyline({
+            path: path,
+            geodesic: true,
+            strokeColor: "#FF0000",
+            strokeOpacity: 1.0,
+            strokeWeight: 3,
+          });
+
+          polyline.setMap(map);
+
+          const bounds = new google.maps.LatLngBounds();
+
+          // Création des marqueurs
+          course.points.forEach((p) => {
+            const marker = new google.maps.Marker({
+              position: { lat: p.lat, lng: p.lng },
+              map,
+              title: p.name,
+              icon: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+            });
+
+            const content = `
+              <div style="max-width:220px">
+                <strong>${p.name}</strong><br/>
+                <p>${p.description}</p>
+                <img src="${p.image}" alt="${p.name}" class="popup-image" />
+              </div>
+            `;
+
+            const infowindow = new google.maps.InfoWindow({
+              content,
+            });
+
+            marker.addListener("click", () => {
+              infowindow.open(map, marker);
+            });
+
+            markers.push(marker);
+            bounds.extend(marker.getPosition());
+          });
+
+          map.fitBounds(bounds);
+        });
+      })
+      .catch((err) => {
+        console.error("Erreur chargement JSON :", err);
+      });
+  };
+</script>
+
+<!-- Remplacez YOUR_API_KEY par votre vraie clé Google Maps -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Y32T_PJHZxYcK3BJYJFNwSl6cuvLXpo&callback=initMap&v=weekly"
+  async
+  defer
+></script>
+
+</body>
+</html>
