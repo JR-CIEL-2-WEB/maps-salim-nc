@@ -1,0 +1,229 @@
+{
+  "courses": [
+    {
+      "name": "Marathon de Paris",
+      "points": [
+        {
+          "id": 1,
+          "name": "Départ - Champs-Élysées",
+          "description": "Lieu de départ emblématique, avenue célèbre à Paris.",
+          "lat": 48.8698,
+          "lng": 2.3076,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Champs-Élysées_2019.jpg/320px-Champs-Élysées_2019.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Place de la Concorde",
+          "description": "Traversée de la place historique et très large.",
+          "lat": 48.8656,
+          "lng": 2.3212,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Place_de_la_Concorde_Paris_2013.jpg/320px-Place_de_la_Concorde_Paris_2013.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Tour Eiffel",
+          "description": "Passage près du monument le plus célèbre de Paris.",
+          "lat": 48.8584,
+          "lng": 2.2945,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/320px-Tour_Eiffel_Wikimedia_Commons.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Jardin des Tuileries",
+          "description": "Belle promenade à travers ce jardin classique.",
+          "lat": 48.8635,
+          "lng": 2.3270,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Tuileries_Garden_-_Paris.jpg/320px-Tuileries_Garden_-_Paris.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Arrivée - Stade de France",
+          "description": "Arrivée à ce grand stade situé au nord de Paris.",
+          "lat": 48.9244,
+          "lng": 2.3600,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Stade_de_France_2011.jpg/320px-Stade_de_France_2011.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Marathon de New York",
+      "points": [
+        {
+          "id": 1,
+          "name": "Départ - Verrazzano-Narrows Bridge",
+          "description": "Pont de départ mythique dans Staten Island.",
+          "lat": 40.6066,
+          "lng": -74.0447,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Verrazzano-Narrows_Bridge_2010-04-19_11-11-37.JPG/320px-Verrazzano-Narrows_Bridge_2010-04-19_11-11-37.JPG"
+        },
+        {
+          "id": 2,
+          "name": "Brooklyn",
+          "description": "Traversée du célèbre quartier de Brooklyn.",
+          "lat": 40.6782,
+          "lng": -73.9442,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Brooklyn_Bridge_park.jpg/320px-Brooklyn_Bridge_park.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Queens",
+          "description": "Passage dans l’arrondissement de Queens.",
+          "lat": 40.7282,
+          "lng": -73.7949,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Queensboro_Bridge_-_Queens.jpg/320px-Queensboro_Bridge_-_Queens.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Manhattan",
+          "description": "Course à travers Manhattan avec Central Park en point de mire.",
+          "lat": 40.7831,
+          "lng": -73.9712,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Central_Park_New_York_City_New_York_23_crop.jpg/320px-Central_Park_New_York_City_New_York_23_crop.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Arrivée - Central Park",
+          "description": "Arrivée dans le célèbre parc de Manhattan.",
+          "lat": 40.7851,
+          "lng": -73.9683,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Central_Park_New_York_City_New_York_23_crop.jpg/320px-Central_Park_New_York_City_New_York_23_crop.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Marathon de Tokyo",
+      "points": [
+        {
+          "id": 1,
+          "name": "Départ - Tokyo Metropolitan Government Building",
+          "description": "Départ au cœur du quartier Shinjuku.",
+          "lat": 35.6895,
+          "lng": 139.6917,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Tokyo_Metropolitan_Government_Building_2015.jpg/320px-Tokyo_Metropolitan_Government_Building_2015.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Shibuya Crossing",
+          "description": "Traversée du célèbre carrefour animé.",
+          "lat": 35.6580,
+          "lng": 139.7016,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Shibuya_Crossing_Scramble.jpg/320px-Shibuya_Crossing_Scramble.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Tokyo Tower",
+          "description": "Passage à côté de la tour emblématique de Tokyo.",
+          "lat": 35.6586,
+          "lng": 139.7454,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tokyo_Tower_and_surrounding_area.jpg/320px-Tokyo_Tower_and_surrounding_area.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Asakusa",
+          "description": "Visite du quartier historique d’Asakusa.",
+          "lat": 35.7148,
+          "lng": 139.7967,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Senso-ji_Temple_2016.jpg/320px-Senso-ji_Temple_2016.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Arrivée - Tokyo Big Sight",
+          "description": "Arrivée dans le centre des expositions de Tokyo.",
+          "lat": 35.6298,
+          "lng": 139.7986,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Tokyo_Big_Sight_2010.JPG/320px-Tokyo_Big_Sight_2010.JPG"
+        }
+      ]
+    },
+    {
+      "name": "Marathon de Berlin",
+      "points": [
+        {
+          "id": 1,
+          "name": "Départ - Porte de Brandebourg",
+          "description": "Départ à l’emblématique porte de Brandebourg.",
+          "lat": 52.5163,
+          "lng": 13.3777,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Brandenburger_Tor_abends.jpg/320px-Brandenburger_Tor_abends.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Reichstag",
+          "description": "Passage devant le Parlement allemand.",
+          "lat": 52.5186,
+          "lng": 13.3762,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bundestag_Berlin_view_from_South_West_2014_002.jpg/320px-Bundestag_Berlin_view_from_South_West_2014_002.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Checkpoint Charlie",
+          "description": "Passage devant le célèbre point de contrôle.",
+          "lat": 52.5076,
+          "lng": 13.3904,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Checkpoint_Charlie_Berlin_2006.jpg/320px-Checkpoint_Charlie_Berlin_2006.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Alexanderplatz",
+          "description": "Place centrale très animée de Berlin.",
+          "lat": 52.5218,
+          "lng": 13.4132,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Alexanderplatz_Berlin_2012_01.JPG/320px-Alexanderplatz_Berlin_2012_01.JPG"
+        },
+        {
+          "id": 5,
+          "name": "Arrivée - Olympiastadion",
+          "description": "Grand stade olympique de Berlin.",
+          "lat": 52.5145,
+          "lng": 13.2394,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Olympiastadion_Berlin_Front.jpg/320px-Olympiastadion_Berlin_Front.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Marathon de Sydney",
+      "points": [
+        {
+          "id": 1,
+          "name": "Départ - Opéra de Sydney",
+          "description": "Départ devant le célèbre opéra.",
+          "lat": -33.8568,
+          "lng": 151.2153,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Sydney_Opera_House_-_Dec_2008.jpg/320px-Sydney_Opera_House_-_Dec_2008.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Harbour Bridge",
+          "description": "Traversée du pont emblématique de Sydney.",
+          "lat": -33.8523,
+          "lng": 151.2108,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sydney_Harbour_Bridge_from_Circular_Quay_2018.jpg/320px-Sydney_Harbour_Bridge_from_Circular_Quay_2018.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Royal Botanic Garden",
+          "description": "Passage dans les magnifiques jardins botaniques.",
+          "lat": -33.8642,
+          "lng": 151.2166,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Royal_Botanic_Garden_Sydney_2016.jpg/320px-Royal_Botanic_Garden_Sydney_2016.jpg"
+        },
+        {
+          "id": 4,
+          "name": "The Rocks",
+          "description": "Quartier historique et pittoresque.",
+          "lat": -33.8597,
+          "lng": 151.2090,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/The_Rocks_Sydney_2015.jpg/320px-The_Rocks_Sydney_2015.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Arrivée - Darling Harbour",
+          "description": "Fin de la course au bord du port Darling Harbour.",
+          "lat": -33.8731,
+          "lng": 151.1997,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Darling_Harbour_Sydney_2019.jpg/320px-Darling_Harbour_Sydney_2019.jpg"
+        }
+      ]
+    }
+  ]
+}
